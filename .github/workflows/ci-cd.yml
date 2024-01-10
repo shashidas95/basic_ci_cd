@@ -26,8 +26,8 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
 
       - name: Execute tests (Unit and Feature tests) via PHPUnit
-      
-        run: vendor/bin/phpunit
+
+        run: ./vendor/bin/pest
       - name: Run tests
         run: php artisan test
   build-and-deploy:

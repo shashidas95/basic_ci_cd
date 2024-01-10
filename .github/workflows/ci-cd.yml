@@ -51,10 +51,10 @@ jobs:
       #     curl -o docker-compose.yml https://github.com/shashidas95/basic_ci_cd/main/docker-compose.yml
 
       - name: Build  Docker Image php
-        run: pwd
-        # run:  docker build -t php Dockerfile.php
+
+        run:  docker build -t php Dockerfile.php .
       - name: Build  Docker Image node
-        run:  docker build -t node Dockerfile.node
+        run:  docker build -t node Dockerfile.node .
 
 
       # - name: Deploy Docker Compose

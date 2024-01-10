@@ -1,8 +1,7 @@
-version: "3.8"
+version: "3.3"
 services:
     php:
-        build:
-            context: .
+        image: "php"
         volumes:
             - ./:/var/www/html
     web:
@@ -30,8 +29,6 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
     # Node Service
     node:
-        build:
-            context: .
-            dockerfile: Dockerfile.node
+        image: "node"
         volumes:
             - ./:/assets

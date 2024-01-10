@@ -19,21 +19,19 @@ services:
         container_name: mysql
         image: mysql:8
         ports:
-          - 3306:3306
+            - 3306:3306
         volumes:
-          - ./mysql/data:/var/lib/mysql
-          - ./draft.sql:/docker-entrypoint-initdb.d/draft.sql
+            - ./mysql/data:/var/lib/mysql
+            - ./draft.sql:/docker-entrypoint-initdb.d/draft.sql
         environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
-          - MYSQL_DATABASE=${DB_DATABASE}
-          - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-          - MYSQL_PASSWORD=${DB_PASSWORD}
- # volumes:
-#     - ./mysql/data:
-# Node Service
+            MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+    # Node Service
     node:
         build:
             context: .
             dockerfile: Dockerfile.node
         volumes:
-        - ./:/assets
+            - ./:/assets

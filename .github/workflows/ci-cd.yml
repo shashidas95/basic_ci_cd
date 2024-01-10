@@ -60,5 +60,5 @@ jobs:
           docker-compose build
           docker-compose push
 
-      - name: Deploy Docker Compose
+      - name: Deploy Docker Compose j
         run: docker-compose up -d

@@ -52,9 +52,9 @@ jobs:
 
       - name: Build  Docker Image php
 
-        run:  docker build -t php Dockerfile.php .
+        run:  docker build -t php -f Dockerfile.php .
       - name: Build  Docker Image node
-        run:  docker build -t node Dockerfile.node .
+        run:  docker build -t node -f Dockerfile.node .
 
 
       # - name: Deploy Docker Compose

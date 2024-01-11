@@ -56,8 +56,9 @@ jobs:
       - name: Build  Docker Image node
         run:  docker build -t shashidas/laravel-blogsite:node -f Dockerfile.node .
 
-      - name: Push to  Docker hub
+      - name: Push  php image to Docker hub
         run: docker push shashidas/laravel-blogsite:php
+      - name: Push  node image to  Docker hub
         run: docker push shashidas/laravel-blogsite:node
       # - name: Deploy Docker Compose
       #   run: docker-compose up -d

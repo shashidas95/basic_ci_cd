@@ -50,15 +50,9 @@ jobs:
       #   run: |
       #     curl -o docker-compose.yml https://github.com/shashidas95/basic_ci_cd/main/docker-compose.yml
 
-      - name: Build  Docker Image php
-
-        run:  docker build -t shashidas/laravel-blogsite:php -f Dockerfile.php .
-      - name: Build  Docker Image node
-        run:  docker build -t shashidas/laravel-blogsite:node -f Dockerfile.node .
-
-      - name: Push  php image to Docker hub
-        run: docker push shashidas/laravel-blogsite:php
-      - name: Push  node image to  Docker hub
-        run: docker push shashidas/laravel-blogsite:node
-      # - name: Deploy Docker Compose
-      #   run: docker-compose up -d
+      - name: Build  and Deploy
+        run: |
+          docker build -t shashidas/laravel-blogsite:php -f Dockerfile.php .
+          docker build -t shashidas/laravel-blogsite:node -f Dockerfile.node .
+          docker push shashidas/laravel-blogsite:php
+          docker push shashidas/laravel-blogsite:node
